@@ -1,35 +1,67 @@
 # Fnd4_FinalProject
 # Fear Conditioning Data Analysis
 
-This project analyzes freezing behavior in rodents across different phases of fear learning (Acquisition, Retrieval, Extinction1, Extinction2, Renewal) under different ketamine treatment conditions.
+This project inestigates the effects of ketamine on different phases of fear conditioning in adult male Wistar rats.
 
 ---
 
-## 🧪 Scientific Question
+##  Scientific Question
 
-How does ketamine affect the acquisition, retrieval, extinction, and renewal of conditioned fear in rodents?
+How does ketamine effect freezing behavior in fear conditioning when applied before the acquisition, retrieval and extinction phases?
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 - `FC_data.xlsx` — Raw behavioral data (5 sheets for each phase)
-- `final_project_analysis.py` — Main analysis script
+- `Foundations4FinalProject.ipynb` — Analysis script
 - `README.md` — This file
 
 ---
 
-## 🧠 Analysis Pipeline
+## Analysis Pipeline
 
-```text
-Raw Excel data (.xlsx)
-     ↓
-Convert to tall (long) format using `pandas.melt()`
-     ↓
-Raw data visualization (line plots or bar plots)
-     ↓
-Linear model fitting (OLS)
-     ↓
-ANOVA and post-hoc testing (statsmodels + Tukey HSD)
-     ↓
-Publication-ready figures
+1. Load and reshape raw data from Excel
+2. Convert data into tall format
+3. Visualize raw and group-level trends with error bars
+4. Fit linear models (OLS) and perform ANOVA
+5. One way ANOVA and post-hoc tests for retrieval phase (Tukey's HSD)
+
+---
+
+## Data Description
+
+The excel file contains 5 sheets corresponding to different phases of fear conditioning,:
+
+acq — Acquisition - 5 cues
+
+ret — Retrieval - single cue
+
+ext1 — Extinction Day 1 - 15 cues
+
+ext2 — Extinction Day 2 - 15 cues
+
+renewal — Renewal - 3 cues
+
+Each sheet has groups and cues column. Cues are represented as freezing percentage during the cue.
+
+---
+## Dependencies
+
+- Python
+- pandas
+- matplotlib
+- seaborn
+- statsmodels
+
+---
+
+## How to Run
+
+1. Clone this repository
+2. Install the required packages
+3. `FC_data.xlsx` should be in the working directory
+4. Run `Foundations4FinalProject.ipynb`
+
+
+
