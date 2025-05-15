@@ -21,11 +21,11 @@ How does ketamine effect freezing behavior in fear conditioning when applied bef
 
 ## Analysis Pipeline
 
-1. Load and reshape raw data from Excel
-2. Convert data into tall format
+1. Load the raw data from Excel
+2. Convert data into tall format and make cues at strings
 3. Visualize raw and group-level trends with error bars
-4. Fit linear models (OLS) and perform ANOVA
-5. One way ANOVA and post-hoc tests for retrieval phase (Tukey's HSD)
+4. Fit linear, logarithmic, and exponential models to the dataset and compare their performance using Akaike Information Criterion (AIC) and perform ANOVA. (except retrieval)
+5. One way ANOVA and post-hoc tests for retrieval phase (Tukey's HSD) (for retrieval)
 
 ---
 
@@ -43,7 +43,13 @@ ext2 — Extinction Day 2 - 15 cues
 
 renewal — Renewal - 3 cues
 
+ext1_ITI - Extinction Day 1 with the time between cues (ITIs)
+
+ext2_ITI - Extinction Day 2 with the time between cues (ITIs)
+
 Each sheet has groups and cues column. Cues are represented as freezing percentage during the cue.
+
+ PS: Please acknowledge that in here the ITI is used wrong. In the literature the ITI (Inter-Trial Interval) is defined as the time between from ONSET of one cue to ONSET of the next cue. While in here it is used as from OFFSET of one cue to ONSET of the next one.
 
 ---
 ## Dependencies
@@ -53,6 +59,7 @@ Each sheet has groups and cues column. Cues are represented as freezing percenta
 - matplotlib
 - seaborn
 - statsmodels
+- numpy
 
 ---
 
